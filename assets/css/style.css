@@ -1,0 +1,190 @@
+/* Global CSS variables */
+:root {
+  --spacing-company: 3rem;
+  --font-weight: 200;
+  --border-radius: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+hgroup > :last-child {
+  font-weight: 200;
+}
+
+#main{
+  padding: 3em 0.5em 0;
+}
+
+small {
+  color: var(--muted-color);
+}
+
+/* Nav */
+summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
+  background-color: transparent;
+  color: var(--contrast-hover);
+}
+
+aside p {
+  margin-bottom: var(--spacing-company);
+  line-height: 1.25;
+}
+
+section {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+/* sns */
+.sns-ul {
+  padding: 0;
+}
+.sns-li {
+  display: inline-block;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+footer,
+.hd {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+#blog-search {
+  display: flex;
+}
+#search-input {
+  flex: 3;
+}
+#search-btn {
+  flex: 1;
+}
+
+#blog-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+}
+
+#blog-nav li{
+  padding: 0px;
+}
+
+.blog-state {
+  display: flex;
+  padding: 20px;
+}
+
+.state-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#layout,
+#menu,
+.menu-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+#layout {
+  position: relative;
+  left: 0px;
+}
+
+#layout.active #menu {
+  left: 200px;
+  width: 200px;
+}
+
+#layout.active .menu-link {
+  left: 208px;
+}
+
+.menu-link {
+  position: fixed;
+  display: block; /* show this only on small screens */
+  top: 4px;
+  left: 8px; /* "#menu width" */
+  z-index: 10;
+  color: black;
+}
+.menu-link:focus, a:focus {
+  --background-color: none;
+}
+
+#menu {
+  margin-left: -200px; /* "#menu" width */
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #191818;
+  overflow-y: auto;
+}
+.content {
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 960px;
+  margin-bottom: 50px;
+}
+
+/* 解决图标点击无效果 */
+.blog-fa {
+  pointer-events: none;
+  font-size: 2em;
+}
+
+#app-theme{
+  position: fixed;
+  top: 4px;
+  right: 10px;
+}
+
+@media (min-width: 992px) {
+
+  #main{
+    padding: 1em 0.5em 0;
+  }
+
+  .content {
+    padding: 2em;
+  }
+
+  #layout {
+    padding-left: 200px;
+    left: 0;
+  }
+  #menu {
+    left: 200px;
+  }
+
+  .menu-link {
+    position: fixed;
+    left: 200px;
+    display: none;
+  }
+
+  #layout.active .menu-link {
+    left: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  #layout.active {
+    position: relative;
+    left: 200px;
+  }
+}
